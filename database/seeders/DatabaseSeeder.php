@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use App\Models\Todo;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,5 +28,7 @@ class DatabaseSeeder extends Seeder
       ]);
       User::factory(100)->create();
       Todo::factory(500)->create();
+      Category::factory(10)->create();
+
     }
 }
