@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,8 @@ Route::middleware('admin')->group(function () {
     Route::delete('/user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
     Route::patch('/user/{user}/makeadmin', [UserController::class, 'makeadmin'])->name('user.makeadmin');
     Route::patch('/user/{user}/removeadmin', [UserController::class, 'removeadmin'])->name('user.removeadmin');
+
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 });
 
 require __DIR__.'/auth.php';
